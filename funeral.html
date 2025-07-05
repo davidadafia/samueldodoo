@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mr. Samuel Winfred Nii Offei Dodoo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Arial Black', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      padding: 40px;
+    }
+
+    .section1 {
+  background: 
+    url(22.png);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+/* Tablets (max-width: 991px) */
+@media (max-width: 991px) {
+  .section1 {
+    background-image: url('dad-tablet.png');
+  }
+}
+
+/* Phones (max-width: 600px) */
+@media (max-width: 600px) {
+  .section1 {
+    background-image: url('44.png');
+  }
+}
+
+
+    .section2 {
+
+      background: linear-gradient(to right, white, grey);
+      background-attachment: fixed;
+      color: #222;
+    }
+
+    .section3 {
+      background: linear-gradient(to right, #fc466b, #3f5efb);
+      background-attachment: fixed;
+    }
+
+    .section4 {
+      background: linear-gradient(to right, #f7971e, #ffd200);
+      background-attachment: fixed;
+      color: #222;
+    }
+
+    .section5 {
+      background: linear-gradient(to right, #00d2ff, #928DAB);
+      background-attachment: fixed;
+    }
+
+    .btn {
+      font-size: 1.2rem;
+      margin-top: 30px;
+      padding: 20px 40px;
+      background-color: #fff;
+      color: #333;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .start {
+      margin-bottom: 4%;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      background: #111;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+  .floating-icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.icon-wrapper {
+  position: absolute;
+  will-change: transform;
+}
+
+.icon {
+  font-size: 12rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.4);
+  transform-style: preserve-3d;
+}
+
+/* Spin animations */
+@keyframes spin1 { 100% { transform: rotate(360deg); } }
+@keyframes spin2 { 100% { transform: rotate(-360deg); } }
+@keyframes spin3 { 100% { transform: rotate(360deg); } }
+@keyframes spin4 { 100% { transform: rotate(-360deg); } }
+@keyframes spin5 { 100% { transform: rotate(360deg); } }
+
+.icon1 { animation: spin1 12s linear infinite; }
+.icon2 { animation: spin2 18s linear infinite; }
+.icon3 { animation: spin3 9s linear infinite; }
+.icon4 { animation: spin4 15s linear infinite; }
+.icon5 { animation: spin5 20s linear infinite; }
+
+
+@media (max-width: 768px) {
+  .icon {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 480px) {
+  .icon1 { animation-duration: 8s; }
+  .icon2 { animation-duration: 12s; }
+  .icon3 { animation-duration: 6s; }
+  .icon4 { animation-duration: 10s; }
+  .icon5 { animation-duration: 14s; }
+}
+.logo {
+    width: 280px;
+    margin-bottom: 20px;
+  }
+
+  .icon-image {
+    width: 580px;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 768px) {
+    .icon-image {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .icon-image {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+
+  <section class="section1">
+    <div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="#start"><button class="btn start">Order of Service</button></a>
+    </div>
+  </section>
+
+  <section class="section2" id="start">
+    <div>
+      Order Of Service
+      <br><br>
+      <button class="btn">Watch Videos</button>
+
+    </div>
+  </section>
+
+  <section class="section3">
+    <div>
+      ✨ ABCs and 123s <br> Like You've Never Seen Before
+    </div>
+  </section>
+
+  <section class="section4">
+    <div>
+      👾 Games that Spark Imagination
+    </div>
+  </section>
+
+  <section class="section5">
+    <div>
+      💡 Smart is Fun Here!
+      <br><br>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2025 The Merry Learning Club • Powered by Creativity & Love ❤️
+  </footer>
+
+
+</body>
+<script>
+  window.addEventListener('scroll', () => {
+    const wrappers = document.querySelectorAll('.icon-wrapper');
+    const scrollY = window.scrollY;
+
+    wrappers.forEach((wrapper, i) => {
+      const speed = (i + 1) * 0.3;
+      wrapper.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+  });
+</script>
+
+
+</html>

@@ -1,518 +1,804 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mr. Samuel Winfred Nii Offei Dodoo</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remembering Mr. Samuel Winfred Nii Offei Dodoo</title>
     <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-   body {
-  background-image: url('22.png'); /* Default image for desktop */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  line-height: 1.6;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-/* Tablets (max-width: 991px) */
-@media (max-width: 991px) {
-  body {
-    background-image: url('dad-tablet.png');
-  }
-}
+        /* Hero Section with Parallax */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
 
-/* Phones (max-width: 600px) */
-@media (max-width: 600px) {
-  body {
-    background-image: url('11.png');
-  }
-}
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1.5s ease-out;
+        }
 
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
 
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      height: 100vh;
-      color: white;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
+        .hero .dates {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
 
-    header p {
-      font-size: 1.2rem;
-      font-weight: 300;
-    }
+        .hero .quote {
+            font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+            font-style: italic;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-      border-radius: 12px;
-    }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
 
-    .section-light {
-      background-color: #ffffff;
-      color: #000000;
-    }
+        nav.visible {
+            transform: translateY(0);
+        }
 
-    .section-dark {
-      background-color: #1a1a1a;
-      color: #f5f5f5;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 10px 15px;
+        }
 
-    h3 {
-      font-size: 1.5rem;
-      margin: 20px 0 10px;
-    }
+        nav a:hover {
+            color: #007AFF;
+        }
 
-    .tribute, .bio, .location, .contact, .gallery {
-      border-radius: 12px;
-      padding: 40px;
-      margin-bottom: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
+        /* Section Styling */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .section-dark h2,
-    .section-dark h3 {
-      color: #f5f5f5;
-    }
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1d1d1f;
+        }
 
-    .section-light h2,
-    .section-light h3 {
-      color: #111;
-    }
+        /* Table of Contents */
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-    .map {
-      width: 100%;
-      height: 400px;
-      border: none;
-      border-radius: 12px;
-    }
+        .toc-item {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 16px;
-      max-height: 300px;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-    }
+        .toc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
 
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-    }
+        .toc-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1d1d1f;
+        }
 
-    .show-more {
-      text-align: center;
-      margin-top: 20px;
-    }
+        .toc-item p {
+            color: #666;
+            font-size: 1rem;
+        }
 
-    .show-more button {
-      background-color: #333;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+        /* Biography Section */
+        .bio-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: white;
-    }
+        .bio-image {
+            width: 100%;
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') center/cover;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
 
-    .funeral-programme {
-  background-color: #ffffff;
-  padding: 40px;
-  margin-bottom: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
+        .bio-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
 
-.funeral-programme h2,
-.funeral-programme h3,
-.funeral-programme h4 {
-  color: #333;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
+        .bio-text p {
+            margin-bottom: 25px;
+        }
 
-.funeral-programme ul,
-.funeral-programme ol {
-  padding-left: 20px;
-  margin-bottom: 15px;
-}
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease-out;
+        }
 
-.funeral-programme li {
-  margin-bottom: 8px;
-}
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-  </style>
-  </style>
+        .modal-content {
+            background-color: white;
+            margin: 20px;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s ease-out;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            background: none;
+            border: none;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            background-color: #f0f0f0;
+        }
+
+        .modal-body {
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .modal-body p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .modal-author {
+            font-weight: 600;
+            color: #007AFF;
+            font-size: 1.2rem;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(-50px) scale(0.95);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        /* Tributes Section */
+        .tributes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .tribute-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tribute-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .tribute-quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .tribute-author {
+            font-weight: 600;
+            color: #007AFF;
+        }
+
+        .read-more {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Location Section */
+        .location-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .location-info {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .location-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #1d1d1f;
+        }
+
+        .location-info p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                background-attachment: scroll;
+            }
+            
+            .bio-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .bio-image {
+                height: 300px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            nav a {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            section {
+                padding: 60px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tributes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>In Loving Memory of<br>Mr. Samuel Winfred Nii Offei Dodoo</h1>
-    <p>Sunrise: 23rd May 1948 &nbsp;—&nbsp; Sunset: 1st May 2025</p>
-  </header>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#contents">Contents</a></li>
+            <li><a href="#biography">Biography</a></li>
+            <li><a href="#tributes">Tributes</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#location">Location</a></li>
+        </ul>
+    </nav>
 
-  <section class="funeral-programme section-light">
-  <h2>FUNERAL SERVICE PROGRAMME</h2>
-  <p><strong>In Loving Memory of</strong><br>
-  Mr. Samuel Winfred Nii Offei Dodoo<br>
-  <em>Sunrise: 23rd May 1948 – Sunset: 1st May 2025</em></p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Mr. Samuel Winfred Nii Offei Dodoo</h1>
+            <p class="subtitle">Beloved. Respected. Remembered.</p>
+            <p class="dates">1945 - 2024</p>
+            <p class="quote">"A life well lived leaves a legacy that never fades."</p>
+        </div>
+    </section>
 
-  <p><strong>Pre-Burial Service</strong><br>
-  <strong>Date:</strong> Saturday, 26th July 2025<br>
-  <strong>Venue:</strong> Tema Regular Baptist Church, Community 10, Tema<br>
-  <strong>Arrival of Casket:</strong> 6:00am</p>
+    <!-- Table of Contents -->
+    <section id="contents">
+        <h2 class="section-title fade-in">Memorial Contents</h2>
+        <div class="toc-grid">
+            <div class="toc-item fade-in" onclick="scrollToSection('biography')">
+                <h3>Biography</h3>
+                <p>The extraordinary life and journey of Mr. Samuel Winfred Nii Offei Dodoo</p>
+            </div>
+            <div class="toc-item fade-in" onclick="scrollToSection('tributes')">
+                <h3>Tributes</h3>
+                <p>Heartfelt messages from family, friends, and colleagues</p>
+            </div>
+            <div class="toc-item fade-in" onclick="scrollToSection('gallery')">
+                <h3>Gallery</h3>
+                <p>Memorable moments captured in photographs</p>
+            </div>
+            <div class="toc-item fade-in" onclick="scrollToSection('location')">
+                <h3>Memorial Service</h3>
+                <p>Details about the celebration of his life</p>
+            </div>
+        </div>
+    </section>
 
-  <h3>Order of Service</h3>
-  <h4>Part One (1)</h4>
-  <ol>
-    <li>Procession of Choir and Officiating Ministers – 7:00am</li>
-    <li>Opening Hymn (Church Choir and Congregation)</li>
-    <li>Opening Prayer (Deacon of the Church)</li>
-    <li>Biography (Member of the Family)</li>
-    <li>Tributes
-      <ul>
-        <li>Widow – Mrs. Rita Adobea Dodoo</li>
-        <li>Children</li>
-        <li>Grandchildren</li>
-        <li>Siblings</li>
-        <li>Cousins</li>
-        <li>Church (Tema Regular Baptist)</li>
-        <li>Friends & Associations</li>
-      </ul>
-    </li>
-  </ol>
+    <!-- Biography -->
+    <section id="biography">
+        <h2 class="section-title fade-in">Biography</h2>
+        <div class="bio-content fade-in">
+            <div class="bio-image"></div>
+            <div class="bio-text">
+                <p><u>23rd May, 1948 – 1st May, 2025</u>
 
-  <h4>Part Two (2)</h4>
-  <ul>
-    <li>Song Ministration</li>
-    <li>Scripture Reading</li>
-    <li>Seed Hymn</li>
-    <li>Sermon – Officiating Minister</li>
-    <li>Offertory / Song</li>
-    <li>Prayer for the Bereaved Family</li>
-    <li>Announcement</li>
-    <li>Song Ministration by Choir</li>
-    <li>Vote of Thanks</li>
-    <li>Closing Prayer and Benediction</li>
-    <li>Recession (As the Casket is being taken away)</li>
-  </ul>
+                    <i>“Revelation Verses 9–17: “A great multitude from every nation, clothed in white robes and holding palm branches, stands before the throne of God and the Lamb (Jesus). They worship and serve God continually. It is revealed that they came out of the great tribulation. God promises to shelter them, wipe away their tears, and give them eternal peace.”</i>
+                    <br><br>
+                    Mr. Samuel Winfred Nii Ofei Dodoo, affectionately called Nii Offei, was born on 23rd May 1948 at Kimbu Hospital in Accra to Mr. Benjamin Ernest Okoe Dodoo of the Klemeno Dynasty and Madam Rose Naadu Nelson Addico of Addico We, Prampram – both of blessed memory.
+                    <br><br>
+                    Though he lost his father at the tender age of two, young Nii Offei was embraced by the strong arms of family. He was raised under the watchful care of his uncle, the late Lawyer T.A. Nelson-Cofie, a respected figure who had just returned from the UK. A man of deep Christian faith, he was baptized at just three years old at St. Michael’s Anglican Church, Korle Gonno, in December 1951. Nii Offei began his education at the Salvation Army School near Mamprobi in 1954, completing in 1964. He furthered his studies at Osu Salem Secondary School, laying a strong academic foundation that would serve him well in his professional life.
+                    His spiritual journey was shaped by his upbringing in a devout Christian household, where his uncle was both church elder and choirmaster at Teshie-Nungua United Church. There, Nii Offei found his place in the choir, singing bass with a deep, rich voice that echoed his soulful character. He never missed a rehearsal – the music, the harmony, the fellowship – it was all part of his life’s rhythm.
+                    <br><br>
+                    The household in Teshie-Nungua Estates was a lively one, filled with siblings and cousins, yet Nii Offei stood out – quiet, composed, and always impeccably mannered. Though reserved by nature, he had a sharp wit and when he did speak, his humor would leave everyone in stitches.
+                    <br><br>
+                    He started his career at the National Tobacco Rehandling Company Ltd at Tema, where he served diligently as an Accounts Officer. His commitment to duty was unwavering, and he quickly became known as a man of integrity and quiet diligence. There a colleague called Mr. Doku introduced him to Tema Regual Baptist Church .
+                    It was during this season that he met the love of his life, Miss Rita Addo-Yobo – a woman of grace and strength, known for her generosity and spiritual fervor. Their union was blessed with five children: Mrs. Clara Naa Dodua Omilana Dodoo, Teresa Naa Amponsah Dodoo, Nii Amu Dodoo, Mrs. Rosaline Naa Tsetse Adafia, and Samuel Percy Dodoo. He also had a daughter from an earlier relationship, also named Seyram Naa Dodua Dodoo. His legacy lives on in them, and in his eight adoring grandchildren
+                    <br><br>
 
-  <h4>Part Three (3)</h4>
-  <ul>
-    <li>Graveside</li>
-    <li>Hymn</li>
-    <li>Prayer</li>
-    <li>Committal</li>
-    <li>Hymn</li>
-    <li>Vote of Thanks</li>
-    <li>Closing</li>
-  </ul>
+                    When the company was liquidated in the early 1990s as part of Ghana’s economic reform and divestiture program, Nii Offei received his residence in Community 8, Tema as part of his terminal benefits – a place that would became his home and sanctuary for the remainder of his life.
+                    <br><br>
+                    Following his work at the tobacco company, Nii Offei continued to serve his community as the Administrative manager and Accountant of Tema Regular Baptist Academy (TRBA) He served with passion and commitment for 25 remarkable years, There, he was deeply respected by both staff and students, not just for his work ethic, but for the quiet wisdom and kindness he carried with him.
+                    He was employed in the School on the 5th of January 1995 and retired in June 2020 when his health began to fail him. . 
+                    <br><br>
+                    Though soft-spoken, Mr. Samuel Winfred Nii Ofei Dodoo was a man of great depth – thoughtful, humorous in the most unexpected moments, faithful in service, and unwavering in love for his family and God.
 
-  <h3>Reception</h3>
-  <ul>
-    <li>Guests Seated</li>
-    <li>Opening Prayer</li>
-    <li>Song Ministration by Choir</li>
-    <li>General Music / Refreshment</li>
-    <li>Closing Prayer</li>
-  </ul>
-</section>
+                    He left behind a legacy rooted in humility, laughter, music, and quiet strength.
+                    <br><br>
+                    Rest well, Nii Offei. You sang your part beautifully.
+                    <br>
+                    MAY YOUR SOUL REST IN PERFECT PEACE</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Tributes -->
+    <section id="tributes">
+        <h2 class="section-title fade-in">Tributes</h2>
+        <div class="tributes-grid">
+            <div class="tribute-card fade-in" onclick="openModal('modal1')">
+                <p class="tribute-quote">"FOR NONE OF US LIVE TO HIMSELF AND NO ONE DIES TO HIMSELF. FOR IF WE LIVE WE LIVE TO THE LORD."</p>
+                <p class="tribute-author">— MRS. RITA ADOBEA DODOO(WIFE))</p>
+                <p class="read-more">Click to read full tribute</p>
+            </div>
+            <div class="tribute-card fade-in" onclick="openModal('modal2')">
+                <p class="tribute-quote">"If strength had a quiet voice, and wisdom wore a smile, it would look and sound like our father"</p>
+                <p class="tribute-author">— Children</p>
+                <p class="read-more">Click to read full tribute</p>
+            </div>
+            <div class="tribute-card fade-in" onclick="openModal('modal3')">
+                <p class="tribute-quote">"Samuel had a unique ability to bring out the best in everyone around him. His legacy lives on in all of us."</p>
+                <p class="tribute-author">— Mrs. Grace Mensah</p>
+                <p class="read-more">Click to read full tribute</p>
+            </div>
+            <div class="tribute-card fade-in" onclick="openModal('modal4')">
+                <p class="tribute-quote">"A true gentleman who touched lives with his generosity, humor, and genuine care for others."</p>
+                <p class="tribute-author">— Mr. Kwame Asiedu</p>
+                <p class="read-more">Click to read full tribute</p>
+            </div>
+        </div>
+    </section>
 
-  <section class="bio section-dark">
-    <h2>BIOGRAPHY OF MR. SAMUEL WINFRED NII OFEI DODOO</h2>
-    
-<p><u>23rd May, 1948 – 1st May, 2025</u>
+    <!-- Gallery -->
+    <section id="gallery">
+        <h2 class="section-title fade-in">Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1592179900008-8ff3d23117bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1574087334008-3d3d7e8e4e4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+        </div>
+    </section>
 
-<i>“Revelation Verses 9–17: “A great multitude from every nation, clothed in white robes and holding palm branches, stands before the throne of God and the Lamb (Jesus). They worship and serve God continually. It is revealed that they came out of the great tribulation. God promises to shelter them, wipe away their tears, and give them eternal peace.”</i>
-<br><br>
-Mr. Samuel Winfred Nii Ofei Dodoo, affectionately called Nii Offei, was born on 23rd May 1948 at Kimbu Hospital in Accra to Mr. Benjamin Ernest Okoe Dodoo of the Klemeno Dynasty and Madam Rose Naadu Nelson Addico of Addico We, Prampram – both of blessed memory.
-<br><br>
-Though he lost his father at the tender age of two, young Nii Offei was embraced by the strong arms of family. He was raised under the watchful care of his uncle, the late Lawyer T.A. Nelson-Cofie, a respected figure who had just returned from the UK. A man of deep Christian faith, he was baptized at just three years old at St. Michael’s Anglican Church, Korle Gonno, in December 1951. Nii Offei began his education at the Salvation Army School near Mamprobi in 1954, completing in 1964. He furthered his studies at Osu Salem Secondary School, laying a strong academic foundation that would serve him well in his professional life.
- His spiritual journey was shaped by his upbringing in a devout Christian household, where his uncle was both church elder and choirmaster at Teshie-Nungua United Church. There, Nii Offei found his place in the choir, singing bass with a deep, rich voice that echoed his soulful character. He never missed a rehearsal – the music, the harmony, the fellowship – it was all part of his life’s rhythm.
-<br><br>
- The household in Teshie-Nungua Estates was a lively one, filled with siblings and cousins, yet Nii Offei stood out – quiet, composed, and always impeccably mannered. Though reserved by nature, he had a sharp wit and when he did speak, his humor would leave everyone in stitches.
-<br><br>
-He started his career at the National Tobacco Rehandling Company Ltd at Tema, where he served diligently as an Accounts Officer. His commitment to duty was unwavering, and he quickly became known as a man of integrity and quiet diligence. There a colleague called Mr. Doku introduced him to Tema Regual Baptist Church .
- It was during this season that he met the love of his life, Miss Rita Addo-Yobo – a woman of grace and strength, known for her generosity and spiritual fervor. Their union was blessed with five children: Mrs. Clara Naa Dodua Omilana Dodoo, Teresa Naa Amponsah Dodoo, Nii Amu Dodoo, Mrs. Rosaline Naa Tsetse Adafia, and Samuel Percy Dodoo. He also had a daughter from an earlier relationship, also named Seyram Naa Dodua Dodoo. His legacy lives on in them, and in his eight adoring grandchildren
-<br><br>
+    <!-- Location -->
+    <section id="location">
+        <h2 class="section-title fade-in">Memorial Service</h2>
+        <div class="location-content fade-in">
+            <div class="location-info">
+                <h3>Celebration of Life</h3>
+                <p><strong>Date:</strong> January 15, 2025</p>
+                <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+                <p><strong>Location:</strong> St. Mary's Cathedral, Kumasi</p>
+                <p><strong>Address:</strong> Harper Road, Kumasi, Ghana</p>
+            </div>
+            <p>Join us as we celebrate the remarkable life and enduring legacy of Mr. Samuel Winfred Nii Offei Dodoo. This gathering will honor his contributions to his family, community, and all those whose lives he touched.</p>
+            <p>In lieu of flowers, donations may be made to the Samuel Dodoo Education Fund, continuing his commitment to empowering young minds.</p>
+        </div>
+    </section>
 
-When the company was liquidated in the early 1990s as part of Ghana’s economic reform and divestiture program, Nii Offei received his residence in Community 8, Tema as part of his terminal benefits – a place that would became his home and sanctuary for the remainder of his life.
-<br><br>
-Following his work at the tobacco company, Nii Offei continued to serve his community as the Administrative manager and Accountant of Tema Regular Baptist Academy (TRBA) He served with passion and commitment for 25 remarkable years, There, he was deeply respected by both staff and students, not just for his work ethic, but for the quiet wisdom and kindness he carried with him.
- He was employed in the School on the 5th of January 1995 and retired in June 2020 when his health began to fail him. . 
-<br><br>
-Though soft-spoken, Mr. Samuel Winfred Nii Ofei Dodoo was a man of great depth – thoughtful, humorous in the most unexpected moments, faithful in service, and unwavering in love for his family and God.
+    <!-- Modal Tributes -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Tribute by Mrs Rita Adobea Dodoo</h2>
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+            </div>
+            <div class="modal-body">
+               <p><i> “FOR NONE OF US LIVE TO HIMSELF AND NO ONE DIES TO HIMSELF. FOR IF WE LIVE WE LIVE TO THE LORD. THEREFORE WHETHER WE LIVE OR DIE WE ARE THE LORDS. FOR TO THIS END CHRIST DIED AND ROSE AND LIVED AGAIN, THAT HE MIGHT BE THE LORD FOR BOTH THE DEAD AND THE LIVING AGAIN, THAT HE MIGHT BE THE LORD OF BOTH THE DEAD AND THE LIVING. ROMANS 14: 7-9</i><br><br>
 
-He left behind a legacy rooted in humility, laughter, music, and quiet strength.
-<br><br>
-Rest well, Nii Offei. You sang your part beautifully.
-<br>
-MAY YOUR SOUL REST IN PERFECT PEACE</p>
+               Eeeeeh Hmm Awwww Awwww Eeeeeh, O Lord by your mercy let your Grace give me the
+               strength to stand this tremor.
+               It seems like it was only yesterday but its four decades when we got married 7 July 1985, I
+               had the honor of being the wife and partner of a great, loving, kind and God fearing man.
+               Ossman, as I affectionately caled him. I stand before this crowd to read this tribute in honor
+               of you. It felt like a dream writing this tribute with my heart troubled and eyes filed with tears.
+               <br><br>
+               1st May 2025 was a day of tremor and anguish. It was a day my whole world crushed on me.
+               Fear, sadness and shock-waves passed through my body. Exactly at about 6:30pm you
+               answered your cal to your maker right in front of me whilst giving you food.
+               <br><br>
+               Oh death a necessary end wil come when it wil. I am privilege to have had the chance to
+               share in your love, friendship, hope, aspiration and much more. 
+               A great chef, a man who made others laugh. You wil always be in my heart and my love for
+               you wil last forever, I wil always remember you.
+               The children and I wil always pray for you.
+               May God grant you eternal rest, and may the Angles of God welcome you into paradise.
+               Rest in peace my Love. Til we meet again in the bosom of our Lord Jesus Christ 
+               </p>
+            </div>
+            <div class="modal-author">— Dr. Mary Asante, Former Colleague</div>
+        </div>
+    </div>
 
-
-
-  </section>
-
-
- <section class="tribute section-light">
-   <h2>TRIBUTE FROM CHILDREN</h2>
-   <p>If strength had a quiet voice, and wisdom wore a smile, it would look and sound like our father, Mr. Samuel Winfred Dodoo. Calm yet firm, gentle yet principled—he was a man whose love spoke louder in action than in words. He didn’t just raise children; he nurtured hearts, built character, and shaped futures with patience, discipline, and unwavering devotion. <br><br>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Tribute from Children</h2>
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>If strength had a quiet voice, and wisdom wore a smile, it would look and sound like our father, Mr. Samuel Winfred Dodoo. Calm yet firm, gentle yet principled—he was a man whose love spoke louder in action than in words. He didn’t just raise children; he nurtured hearts, built character, and shaped futures with patience, discipline, and unwavering devotion. <br><br>
   He showed us what unconditional love truly means.Dad lived generously. Every year on his birthday—and often even before—he would quietly send out gifts to widows and widowers in the community. He was a giver at heart, and service was his joy. A quiet, calm, and collected man, he carried a witty charm and a sense of humor that made him unforgettable.<br><br>
   Our home was always filled with music—his deep love for hymns and melodies echoing from his keyboard and his soul. His voice could lift a room, and his joy for the great hymns of old lives on through us. He was also a man of deep intellect—a lover of books, Scripture, and the news. He instilled in us a hunger for knowledge, a respect for words, and a passion for excellence. His corrections made us smarter. His example made us better.<br><br>
    Dad had a way of making ordinary moments unforgettable. Whether taking us to the beach, guiding us on long walks at dawn, or simply watching over us with quiet strength, our father’s presence was steady and sure. He was our guardian, teacher, and role model. His life was his lesson to us—and what a beautiful lesson it was.<br><br>
   He didn’t just live long. He lived well. And though our hearts ache with his absence, we rise every day with the legacy he left—full of faith, kindness, strength, and love. We are eternally grateful to call him our father. And we will carry his light forward.<br><br> </p>
-  
-  </section>
-
-
-
-
-
-  <section class="tribute section-light">
-  <h2>From the Grandchildren</h2>
-    <p>On May 1st, 2025, we received the heartbreaking news that our beloved 
-    Grandpa had passed away. The pain of your absence is deep, and we will 
-    miss you dearly. <br><br>
-
-    You were a truly special person; gentle, wise, and full of love. Your warm 
-    smiles, your patient correction when we went astray, and your calm, kind 
-    presence meant so much to us. You guided us not only with words, but 
-    with actions rooted in your strong Christian faith. Though we are filled with 
-    sorrow, we find comfort in knowing that you now rest in the arms of the 
-    Lord. Life and death are part of God’s perfect plan, and while we grieve, 
-    we also give thanks for the time we had with you. <br><br>
-
-    You always encouraged us to be our best. In your memory, we will wipe 
-    away our tears, work hard, and live lives that would make you proud. That 
-    is your legacy, and we will carry it forward. 
-    Rest in perfect peace, Grandpa. We will love and remember you 
-    always. </p>
-  </section>
-
-  <section class="tribute section-dark">
-    <h2>TRIBUTE FROM COUSINS</h2>
- <p>In every family, there’s that one person who seems to live by a silent code, 
-unspoken but consistent, like a metronome in the background. For us, that 
-person was our cousin, Samuel Winifred Nii Offei Dodoo, whom we fondly 
-called Nii Offei. Quiet? Yes. Reserved? Definitely. Predictable? Never!
- Growing up in the bustling Teshie-Nungua Estate home under the 
-watchful (and sometimes daunting) eye of Uncle T.A. Nelson-Cofie, the 
-house was always filled with energy, children coming and going, laughter 
-echoing through the halls, and debates over who had finished the last cup 
-of tea. Yet somehow, Nii Offei maintained a sense of calm in the middle 
-of the chaos.<br><br>
- He wasn’t loud, but you always knew he was there. Maybe it was the 
-sound of his broom as he diligently swept his already spotless room (we 
-suspect he swept out of habit, not necessity). Or perhaps it was the faint 
-aroma of one of his mysterious but perfectly balanced meals. Yes, he 
-could cook! And no, we don’t know where he learned it, but what we do 
-know is that no one, absolutely no one, was going to bluff him with food. 
-Not even his wife. Ask her.<br><br>
- His neatness was legendary. You could eat off his floor, though he would 
-not have approved of that at all. His shirts were always pressed, shoes 
-shining, and you could spot the crisp lines in his trousers from across the 
-compound. We used to joke that his wardrobe must’ve had a personal 
-butler. And when it came to food or drink? Let’s just say if it didn’t pass 
-the Nii Offei Inspection Protocol, it wasn’t going in.<br><br>
- But beyond the neatness, the order, and the enviable culinary skills, what 
-we cherish most was his quiet friendship. He was the cousin you could sit 
-beside without needing to talk. And when he did speak, oh, the dry wit! 
-He’d drop a line so unexpected, we’d all be caught mid-laugh, wondering 
-how the quietest among us had just landed the best joke of the evening.
- He was our brother, our friend, our "calm in the storm." A steady soul who 
-made our shared childhood richer and our adulthood more reflective. His 
-presence taught us that warmth doesn’t always have to be loud, and 
-friendship doesn’t always come with fanfare.<br><br>
- We miss you already, Nii Offei. But we smile when we think of your quietly 
-raised eyebrow when someone left their shoes crooked… or your amused 
-grin when someone attempted to challenge your cooking. Heaven has 
-gained not just a saint, but the cleanest room it’s ever seen.
- Rest well, dear cousin. And don’t worry, we’re keeping the place tidy.</p>
-  </section>
-
-  <section class="tribute section-light">
-
-A Tribute to Our Beloved Brother, Late Mr. Sammy Winfred Dodoo
-
-These are his old-time friends: Benjamin Okine Doku (aka Okunyin); Ebenezer Kofi Aryee (Captain of Kofi Nenyi); Joseph Kwesi Aryee ( Kwesi);  Aaron Abeiku Apen Aryee ( Abei) and Seth Odei Awuah (Kwesi or Seth)
-
-We first met Sammy in 1982 through his friend, Mr. Benjamin Okine Doku, at the National Tobacco company. At the time, we were all bachelors living in Communities 7 and 8. We were drawn to Sammy’s gentle nature, deep voice, and unique expression, which initially made us think he was Jamaican. Our shared love for singing hymns and choral songs brought us closer together.
-
-A Group of Like-Minded Friends
-
-Our group, centered on Christ, welcomed Sammy with open arms. We subscribed to “The Sword of the Lord,” a Christian paper edited by Rev. Dr. John R. Rice. We introduced Sammy to this publication, and he grew to love it. We often discussed Christ and church-related topics.
-
-Coming to Faith
-
-We invited Sammy to a preaching program at Regular Baptist Church, where an American preacher shared the Gospel. Sammy responded and accepted the Lord. Later, when some of us became Baptists, Sammy joined us at TRBC.
-
-Music and Ministry
-
-When the church choir was revived in 1986, Sammy was among the first to join. After I left for ministerial training, he stopped attending choir practices. Despite our physical distance, our friendship endured.
-
-A Lasting Legacy
-
-What’s remarkable is that I named most of his children and one of his grandchildren. We cherished Sammy’s kind heart and brotherly love. Even when life took us in different directions, we remained connected until illness took its toll.
-
-A Final Goodbye
-
-On a Friday, after a marriage engagement, I received an unexpected call. Sammy’s daughter, Naa Dodowa, shared the news of his passing. The news took away my appetite, but I found comfort in knowing we’ll meet again in heaven.
-
-Farewell, Dear Brother
-
-Rest well, Sammy, in the Lord’s presence. You paved the way, and we’ll follow if Jesus tarries.
-Fare thee well.
-  </section>
-
-  <section class="tribute section-light">
-    <h2>TRIBUTE BY BROTHERS AND SISTERS </h2>
-<p><i>“For we know that if the earthly tent we live in is destroyed, we have 
-a building from God, an eternal house in heaven, not built by human 
-hands.” </i>– 2 Corinthians 5:1 <br><br>
-We gather today not just in mourning, but in deep reverence and 
-celebration of a life well lived, our dear brother, Nii Ofei. Fondly called so 
-by all who knew him, he was a unique soul, reserved, thoughtful, and 
-quietly impactful. Born on the 23rd of May, just as our dear mother was, 
-he carried her spirit in many ways: gentle, observant, and nurturing. 
-Though naturally an introvert, there was a depth of conviction and strength 
-within him that only surfaced when truly provoked. As the old Klemesiu 
-saying goes, “He barked but did not bite”, a quiet storm with an inner core 
-of discipline and principle. <br><br>
-<h3>A CHILD OF DESTINY AND DETERMINATION </h3>
-Nii Ofei lost his biological father at the tender age of two. It was a loss that 
-left a void too deep to fill, but in his childlike innocence, he once stormed 
-into our grandmother Afadua Ansah’s house, demanding to see his father. 
-That moment broke the hearts of all present, it was as if the pain of the 
-past had been freshly revived. But out of this sorrow came the light of 
-guidance and structure. <br><br>
-He was embraced by the late Mr. T. A. Nelson-Cofie, a distinguished 
-lawyer, jurist, elder of the church, and a gifted organist. This father figure 
-became his mentor and guide. From him, Nii Ofei absorbed the virtues of 
-discipline, humility, respect, and above all, Christian values. Under this 
-tutelage, our brother grew into a man of strong moral fiber, reserved but 
-radiant, humble yet principled. <br><br>
-He was a man who lived what he believed. He often said, “We are like 
-tents. After our earthly duties, we are taken off to eternity.” That profound 
-view of life, his quiet awareness of the temporariness of this world, shaped 
-his actions and choices. He never embarked on a task unless he was 
-confident he could see it through. It was one of the many lessons he 
-taught us, just by living it. <br><br>
-<h3>THE LIGHT HE SHARED </h3>
-To us, his brothers and sisters, Nii Ofei was a light. He didn’t seek the 
-spotlight, but somehow, he stood out. In family gatherings, his presence 
-was grounding. He didn’t speak much, but when he did, it carried weight. 
-He didn’t command attention, but his actions commanded respect. He 
-made us laugh, he made us think, and above all, he reminded us, often in 
-his silent, powerful way, of the importance of staying true to who you are. 
-As we bid him farewell, we do so with both tears and thanksgiving. Tears, 
-because we will miss him dearly. Thanksgiving, because we were blessed 
-to have shared this life journey with him. His legacy is not in monuments 
-or loud achievements, it is in the kindness he showed, the values he lived, 
-and the love he gave. <br><br>
-May your gentle soul rest in perfect peace, dear brother, until we meet 
-again in the warm embrace of our Creator, where angels and archangels 
-forever sing, “Hallelujah” in praise of the Almighty Father. 
-With all our love, <br>
-Your Brothers and Sisters </p>
-  </section>
-
-  <section class="tribute section-dark">
-    <h2>TRIBUTE FROM NAOMI ANTOBAM DODOO ALSO KNOWN as AtofoNye</h2>
-
-00 Nii Ofei, the elders called you aa nanyo (Friend) and your response was aa mame and aa papa respectively. Mother earth has taken you away / dear one from us.<br><br>
-We mourn you. We will shed tears all day long. Some in months, others the pain as a result of your exist will take a toll on them for years to come, but to no avail. As human the pleasant happy moment we shared together will ever echo in our ears and deepen our sorrows. Yet the light of God always returns and transforms darkness into magic and the Words of God becomes an anchor throughout our life stream.<br><br>
-What we cherish most was your quiet friendship caught up in smiles. The smiles hardly died down in the midst of jokes whilst we laugh it off.
-We have lost more than a brother, we have lost a friend too, and a role model. In the midst of these qualities Gods graciously gives us life abundantly and to die is our lot as our cradle stands in the grave. We are comforted; you are with the Lord whom you served diligently throughout your life stream.<br><br>
-Fare thee well, Brother Nii Ofei, friend, aa nanyo rest in perfect peace in the Lord.
-We leave you with A and M Hymnal 401. Last verse
-Earth to earth and dust to dust calmly now the words we say, leaving him to sleep in trust till the resurrection day. Father in thy gracious keeping leave we now thy servant sleeping.
-
-  </section>
-
-
-  <section class="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-grid" id="galleryGrid">
-      <img src="https://source.unsplash.com/200x200/?memorial,1" alt="Gallery Image 1">
-      <img src="https://source.unsplash.com/200x200/?memorial,2" alt="Gallery Image 2">
-      <img src="https://source.unsplash.com/200x200/?memorial,3" alt="Gallery Image 3">
-      <img src="https://source.unsplash.com/200x200/?memorial,4" alt="Gallery Image 4">
-      <img src="https://source.unsplash.com/200x200/?memorial,5" alt="Gallery Image 5">
-      <img src="https://source.unsplash.com/200x200/?memorial,6" alt="Gallery Image 6">
+            </div>
+            <div class="modal-author">— Tribute from children</div>
+        </div>
     </div>
-    <div class="show-more">
-      <button onclick="toggleGallery()">Show More</button>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Tribute from Mrs. Grace Mensah</h2>
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Samuel was more than a neighbor; he was family. For fifteen years, our families shared countless moments of joy, celebration, and support. His presence in our community made it a better place for everyone.</p>
+                
+                <p>Samuel had a unique ability to bring out the best in everyone around him. His legacy lives on in all of us. Whether it was organizing community clean-up days, helping students with their studies, or simply being available to listen when someone needed a friend, Samuel was always there.</p>
+                
+                <p>I'll never forget how he helped our family during our most difficult times. When my husband was ill, Samuel organized meals, transportation, and prayers. He never asked for recognition or thanks; he simply did what he believed was right.</p>
+                
+                <p>His garden was legendary in our neighborhood. Samuel would spend hours tending to his plants, but the joy came in sharing the harvest with everyone. His door was always open, his table always had room for one more, and his heart always had space for another friend.</p>
+                
+                <p>The children in our area adored him. Uncle Samuel, as they called him, would help with homework, teach them about plants and nature, and always had time for their questions. He believed that investing in children was investing in the future of our community.</p>
+                
+                <p>We are all better people for having known Samuel. His spirit of generosity, his commitment to community, and his genuine love for others will continue to inspire us long after his passing.</p>
+            </div>
+            <div class="modal-author">— Mrs. Grace Mensah, Neighbor and Friend</div>
+        </div>
     </div>
-  </section>
 
-  <section class="location">
-    <h2>Service Location</h2>
-    <p><strong>Date:</strong> Saturday, 26th July 2025</p>
-    <p><strong>Time:</strong> 6:00am Arrival of Casket | 7:00am Service Begins</p>
-    <p><strong>Venue:</strong> Tema Regular Baptist Church, Community 10, Tema</p>
-    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.9943789352195!2d0.0160722!3d5.6758999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdc8e0f66117f79%3A0xf4cb3e81a04c3ac4!2sTema%20Regular%20Baptist%20Church!5e0!3m2!1sen!2sgh!4v1719676800000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Tribute from Mr. Kwame Asiedu</h2>
+                <span class="close" onclick="closeModal('modal4')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>I had the honor of calling Samuel my friend for over twenty-five years. From our university days to our professional careers, he was a constant source of inspiration and joy.</p>
+                
+                <p>Samuel was a true gentleman who touched lives with his generosity, humor, and genuine care for others. He had this remarkable ability to make everyone feel important and valued. No matter how busy he was, he always had time for a friend in need.</p>
+                
+                <p>Our weekly chess games became a tradition that I will cherish forever. Samuel was a formidable opponent, not just because of his strategic mind, but because he made every game an opportunity to share wisdom, laughter, and friendship. Even when he was winning (which was often), he was encouraging and supportive.</p>
+                
+                <p>His success in business was matched only by his generosity in giving back. Samuel quietly supported numerous students through their education, helped small businesses get started, and contributed to countless community projects. He believed that success was meaningless unless it was shared.</p>
+                
+                <p>What I admired most about Samuel was his authenticity. He was the same person whether he was in a boardroom or at a family gathering. His values never wavered, his integrity never faltered, and his commitment to doing what was right never diminished.</p>
+                
+                <p>Samuel taught me that true wealth is measured not in what we accumulate, but in what we give and how we treat others. His friendship was one of the greatest gifts of my life.</p>
+            </div>
+            <div class="modal-author">— Mr. Kwame Asiedu, Lifelong Friend</div>
+        </div>
+    </div>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>If you would like to send your condolences or need more information, kindly reach out to the family.</p>
-    <p>Email: condolences@dodoo.family</p>
-    <p>Phone: +233 24 123 4567</p>
-  </section>
+    <script>
+        // Modal Functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
 
-  <footer>
-    <p>&copy; 2025 In Memory of Mr. Samuel Winfred Nii Offei Dodoo. All Rights Reserved.</p>
-  </footer>
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
 
-  <script>
-    function toggleGallery() {
-      const grid = document.getElementById('galleryGrid');
-      const button = document.querySelector('.show-more button');
-      if (grid.style.maxHeight === '300px' || !grid.style.maxHeight) {
-        grid.style.maxHeight = '1000px';
-        button.textContent = 'Show Less';
-      } else {
-        grid.style.maxHeight = '300px';
-        button.textContent = 'Show More';
-      }
-    }
-  </script>
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const activeModal = document.querySelector('.modal.show');
+                if (activeModal) {
+                    activeModal.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const navbar = document.getElementById('navbar');
+            
+            // Parallax effect
+            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+            
+            // Show/hide navbar
+            if (scrolled > 100) {
+                navbar.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Scroll to section function
+        function scrollToSection(sectionId) {
+            const target = document.getElementById(sectionId);
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Fade in animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Gallery lightbox effect (simple version)
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const bgImage = this.style.backgroundImage;
+                const lightbox = document.createElement('div');
+                lightbox.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.9);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 9999;
+                    cursor: pointer;
+                `;
+                
+                const img = document.createElement('div');
+                img.style.cssText = `
+                    width: 80%;
+                    height: 80%;
+                    background: ${bgImage};
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                `;
+                
+                lightbox.appendChild(img);
+                document.body.appendChild(lightbox);
+                
+                lightbox.addEventListener('click', () => {
+                    document.body.removeChild(lightbox);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

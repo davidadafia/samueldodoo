@@ -21,8 +21,8 @@
         /* Hero Section with Parallax */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80') center/cover fixed;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('22.PNG') center/cover fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -161,7 +161,7 @@
         .bio-image {
             width: 100%;
             height: 500px;
-            background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') center/cover;
+            background: url('22.PNG') center/cover;
             border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
         }
@@ -280,6 +280,171 @@
             to { 
                 opacity: 1;
                 transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Programme Section */
+        .programme-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .programme-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .programme-header h3 {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .programme-header h2 {
+            font-size: 2rem;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .programme-dates {
+            font-size: 1.1rem;
+            color: #007AFF;
+            font-weight: 500;
+        }
+
+        .programme-details {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .programme-info {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .programme-info h3 {
+            font-size: 1.5rem;
+            color: #1d1d1f;
+            margin-bottom: 15px;
+        }
+
+        .programme-info p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .programme-section h3 {
+            font-size: 1.8rem;
+            color: #1d1d1f;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .programme-part {
+            margin-bottom: 40px;
+        }
+
+        .programme-part h4 {
+            font-size: 1.3rem;
+            color: #007AFF;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007AFF;
+        }
+
+        .programme-timeline {
+            margin-left: 20px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .time {
+            font-weight: 600;
+            color: #007AFF;
+            min-width: 80px;
+            margin-right: 20px;
+        }
+
+        .activity {
+            flex: 1;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .tribute-list {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .tribute-list li {
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .programme-list {
+            margin-left: 20px;
+        }
+
+        .list-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            font-size: 1rem;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-item::before {
+            content: "•";
+            color: #007AFF;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .programme-header {
+                padding: 30px 20px;
+            }
+            
+            .programme-details {
+                padding: 30px 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .time {
+                margin-bottom: 5px;
+                margin-right: 0;
             }
         }
         /* Tributes Section */
@@ -442,7 +607,7 @@
     <nav id="navbar">
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#contents">Contents</a></li>
+            <li><a href="#programme">Programme</a></li>
             <li><a href="#biography">Biography</a></li>
             <li><a href="#tributes">Tributes</a></li>
             <li><a href="#gallery">Gallery</a></li>
@@ -455,33 +620,109 @@
         <div class="hero-content">
             <h1>Mr. Samuel Winfred Nii Offei Dodoo</h1>
             <p class="subtitle">Beloved. Respected. Remembered.</p>
-            <p class="dates">1945 - 2024</p>
+            <p class="dates">23rd May 1948 - 1st May 2025</p>
             <p class="quote">"A life well lived leaves a legacy that never fades."</p>
         </div>
     </section>
+    
+    <!-- Programme Section -->
+    <section id="programme">
+        <h2 class="section-title fade-in">Funeral Service Programme</h2>
+        <div class="programme-content fade-in">
+            <div class="programme-header">
+                <h3>In Loving Memory of</h3>
+                <h2>Mr. Samuel Winfred Nii Offei Dodoo</h2>
+                <p class="programme-dates">
+                    <strong>Sunrise:</strong> 23rd May 1948 – <strong>Sunset:</strong> 1st May 2025
+                </p>
+            </div>
 
-    <!-- Table of Contents -->
-    <section id="contents">
-        <h2 class="section-title fade-in">Memorial Contents</h2>
-        <div class="toc-grid">
-            <div class="toc-item fade-in" onclick="scrollToSection('biography')">
-                <h3>Biography</h3>
-                <p>The extraordinary life and journey of Mr. Samuel Winfred Nii Offei Dodoo</p>
-            </div>
-            <div class="toc-item fade-in" onclick="scrollToSection('tributes')">
-                <h3>Tributes</h3>
-                <p>Heartfelt messages from family, friends, and colleagues</p>
-            </div>
-            <div class="toc-item fade-in" onclick="scrollToSection('gallery')">
-                <h3>Gallery</h3>
-                <p>Memorable moments captured in photographs</p>
-            </div>
-            <div class="toc-item fade-in" onclick="scrollToSection('location')">
-                <h3>Memorial Service</h3>
-                <p>Details about the celebration of his life</p>
+            <div class="programme-details">
+                <div class="programme-info">
+                    <h3>Pre-Burial Service</h3>
+                    <p><strong>Date:</strong> Saturday, 26th July 2025</p>
+                    <p><strong>Venue:</strong> Tema Regular Baptist Church, Community 10, Tema</p>
+                    <p><strong>Arrival of Casket:</strong> 6:00am</p>
+                </div>
+
+                <div class="programme-section">
+                    <h3>Order of Service</h3>
+                    
+                    <div class="programme-part">
+                        <h4>Part One (1)</h4>
+                        <div class="programme-timeline">
+                            <div class="timeline-item">
+                                <span class="time">7:00am</span>
+                                <span class="activity">Procession of Choir and Officiating Ministers</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="activity">Opening Hymn (Church Choir and Congregation)</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="activity">Opening Prayer (Deacon of the Church)</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="activity">Biography (Member of the Family)</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="activity">Tributes</span>
+                                <ul class="tribute-list">
+                                    <li>Widow (Mrs. Rita Adobea Dodoo)</li>
+                                    <li>Children</li>
+                                    <li>Grandchildren</li>
+                                    <li>Siblings</li>
+                                    <li>Cousins</li>
+                                    <li>Church (Tema Regular Baptist)</li>
+                                    <li>Friends & Associations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="programme-part">
+                        <h4>Part Two (2)</h4>
+                        <div class="programme-list">
+                            <div class="list-item">Song Ministration</div>
+                            <div class="list-item">Scripture Reading</div>
+                            <div class="list-item">Seed Hymn</div>
+                            <div class="list-item">Sermon – Officiating Minister</div>
+                            <div class="list-item">Offertory/Song</div>
+                            <div class="list-item">Prayer for the Bereaved Family</div>
+                            <div class="list-item">Announcement</div>
+                            <div class="list-item">Song Ministration by Choir</div>
+                            <div class="list-item">Vote of thanks</div>
+                            <div class="list-item">Closing Prayer and Benediction</div>
+                            <div class="list-item">Recession (As the Casket is being taken away)</div>
+                        </div>
+                    </div>
+
+                    <div class="programme-part">
+                        <h4>Part Three (3) - Graveside</h4>
+                        <div class="programme-list">
+                            <div class="list-item">Hymn</div>
+                            <div class="list-item">Prayer</div>
+                            <div class="list-item">Committal</div>
+                            <div class="list-item">Hymn</div>
+                            <div class="list-item">Vote of thanks</div>
+                            <div class="list-item">Closing</div>
+                        </div>
+                    </div>
+
+                    <div class="programme-part">
+                        <h4>Reception</h4>
+                        <div class="programme-list">
+                            <div class="list-item">Guest seated</div>
+                            <div class="list-item">Opening prayer</div>
+                            <div class="list-item">Song Ministration by Choir</div>
+                            <div class="list-item">General Music/Refreshment</div>
+                            <div class="list-item">Closing Prayer</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+   
 
     <!-- Biography -->
     <section id="biography">
@@ -551,30 +792,36 @@
     <section id="gallery">
         <h2 class="section-title fade-in">Gallery</h2>
         <div class="gallery-grid">
-            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
-            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1592179900008-8ff3d23117bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
-            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
-            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
-            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1574087334008-3d3d7e8e4e4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
-            <div class="gallery-item fade-in" style="background-image: url('https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+            <div class="gallery-item fade-in" style="background-image: url(22.PNG)"></div>
+            <div class="gallery-item fade-in" style="background-image: url(22.PNG)"></div>
+            <div class="gallery-item fade-in" style="background-image: url(22.PNG)"></div>
+            <div class="gallery-item fade-in" style="background-image: url(22.PNG)"></div>
+            <div class="gallery-item fade-in" style="background-image: url(22.PNG)"></div>
+            <div class="gallery-item fade-in" style="background-image: url(22.PNG)"></div>
         </div>
     </section>
 
     <!-- Location -->
     <section id="location">
-        <h2 class="section-title fade-in">Memorial Service</h2>
+        <h2 class="section-title fade-in">Location</h2>
         <div class="location-content fade-in">
             <div class="location-info">
                 <h3>Celebration of Life</h3>
-                <p><strong>Date:</strong> January 15, 2025</p>
-                <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
-                <p><strong>Location:</strong> St. Mary's Cathedral, Kumasi</p>
-                <p><strong>Address:</strong> Harper Road, Kumasi, Ghana</p>
+                <p><strong>Date:</strong> Saturday, 26th July 2025</p>
+                <p><strong>Time:</strong> 7:00 AM - 12:00 PM</p>
+                <p><strong>Location:</strong> Tema Regular Baptist Church</p>
+                <p><strong>Address:</strong> Community 10, Tema, Ghana</p>
             </div>
+            <br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.8985155463256!2d-0.016849108922882598!3d5.661756867358635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf80b8d9281c2d%3A0xb623613d7e053251!2sRegular%20Baptist%20Church!5e0!3m2!1sen!2sgh!4v1752010085193!5m2!1sen!2sgh" width="700" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <p>Join us as we celebrate the remarkable life and enduring legacy of Mr. Samuel Winfred Nii Offei Dodoo. This gathering will honor his contributions to his family, community, and all those whose lives he touched.</p>
             <p>In lieu of flowers, donations may be made to the Samuel Dodoo Education Fund, continuing his commitment to empowering young minds.</p>
+
+
         </div>
     </section>
+
+    
 
     <!-- Modal Tributes -->
     <div id="modal1" class="modal">
@@ -618,10 +865,10 @@
             </div>
             <div class="modal-body">
                 <p>If strength had a quiet voice, and wisdom wore a smile, it would look and sound like our father, Mr. Samuel Winfred Dodoo. Calm yet firm, gentle yet principled—he was a man whose love spoke louder in action than in words. He didn’t just raise children; he nurtured hearts, built character, and shaped futures with patience, discipline, and unwavering devotion. <br><br>
-  He showed us what unconditional love truly means.Dad lived generously. Every year on his birthday—and often even before—he would quietly send out gifts to widows and widowers in the community. He was a giver at heart, and service was his joy. A quiet, calm, and collected man, he carried a witty charm and a sense of humor that made him unforgettable.<br><br>
-  Our home was always filled with music—his deep love for hymns and melodies echoing from his keyboard and his soul. His voice could lift a room, and his joy for the great hymns of old lives on through us. He was also a man of deep intellect—a lover of books, Scripture, and the news. He instilled in us a hunger for knowledge, a respect for words, and a passion for excellence. His corrections made us smarter. His example made us better.<br><br>
-   Dad had a way of making ordinary moments unforgettable. Whether taking us to the beach, guiding us on long walks at dawn, or simply watching over us with quiet strength, our father’s presence was steady and sure. He was our guardian, teacher, and role model. His life was his lesson to us—and what a beautiful lesson it was.<br><br>
-  He didn’t just live long. He lived well. And though our hearts ache with his absence, we rise every day with the legacy he left—full of faith, kindness, strength, and love. We are eternally grateful to call him our father. And we will carry his light forward.<br><br> </p>
+                He showed us what unconditional love truly means.Dad lived generously. Every year on his birthday—and often even before—he would quietly send out gifts to widows and widowers in the community. He was a giver at heart, and service was his joy. A quiet, calm, and collected man, he carried a witty charm and a sense of humor that made him unforgettable.<br><br>
+                Our home was always filled with music—his deep love for hymns and melodies echoing from his keyboard and his soul. His voice could lift a room, and his joy for the great hymns of old lives on through us. He was also a man of deep intellect—a lover of books, Scripture, and the news. He instilled in us a hunger for knowledge, a respect for words, and a passion for excellence. His corrections made us smarter. His example made us better.<br><br>
+                Dad had a way of making ordinary moments unforgettable. Whether taking us to the beach, guiding us on long walks at dawn, or simply watching over us with quiet strength, our father’s presence was steady and sure. He was our guardian, teacher, and role model. His life was his lesson to us—and what a beautiful lesson it was.<br><br>
+                He didn’t just live long. He lived well. And though our hearts ache with his absence, we rise every day with the legacy he left—full of faith, kindness, strength, and love. We are eternally grateful to call him our father. And we will carry his light forward.<br><br> </p>
             </div>
             <div class="modal-author">— Tribute from children</div>
         </div>
